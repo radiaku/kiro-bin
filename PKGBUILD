@@ -67,7 +67,7 @@ package() {
     mkdir -p "$pkgdir/usr/share/zsh/site-functions"
 
     ln -s /opt/Kiro/resources/completions/bash/$_name \
-        "$pkgdir/usr/share/bash-completion/completions/$name"
+        "$pkgdir/usr/share/bash-completion/completions/$_name"
     ln -s /opt/Kiro/resources/completions/zsh/_$_name \
         "$pkgdir/usr/share/zsh/site-functions/_$_name"
 
