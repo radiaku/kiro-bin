@@ -36,7 +36,11 @@ pkgbase = kiro-bin
 	options = !strip
 	source = kiro-202507140012.tar.gz::https://prod.download.desktop.kiro.dev/releases/202507140012--distro-linux-x64-tar-gz/202507140012-distro-linux-x64.tar.gz
 	source = kiro.desktop
+	source = kiro-url-handler.desktop
+	source = kiro-workspace.xml
 	b2sums = 39a2b0fb091734fda20e8bbcaa8eb2dbf1a3cf95cdd0dcd06bf9137a2e203a5d1246a409a4a21fb04023d2696f2acda648d2e49c2a730d5cdc86819429734643
 	b2sums = e1c5ba95a32cc5f980e583f3ae6d94ed9418069409c6696d4e56088404a9ce83efc0833106b625a93d387fc0ffb1b4174525bb4dfb8a966f510f0389b821f756
+	b2sums = 2998ee92f434b5e45c34cfa374d7f9a4ba604ec2b0af05f28cc059e81a8af808318a68efacf9f12399d339830f3f9f08a1201d8a89592f1ff9af273209f075fe
+	b2sums = 0f855638664cd605ec41cd5b03e0e989043b6dcbeae2e0990653b1c8e8526eb567b70bd9c7c17e2a8c19ff2d4ccd49fd8607d667b629a372ee01511021441a6d
 
 pkgname = kiro-bin
