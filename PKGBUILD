@@ -58,7 +58,7 @@ package() {
     install -Dm644 "$srcdir/$_name.desktop" \
         "$pkgdir/usr/share/applications/Kiro.desktop"
     install -Dm644 "$srcdir/Kiro/resources/app/resources/linux/code.png" \
-        "$pkgdir/usr/share/pixmaps/$_name.svg"
+        "$pkgdir/usr/share/pixmaps/$_name.png"
     install -Dm644 "$srcdir/Kiro/resources/completions/bash/$_name" \
         "$pkgdir/usr/share/bash-completion/completions/$_name"
     install -Dm644 "$srcdir/Kiro/resources/completions/zsh/_$_name" \
