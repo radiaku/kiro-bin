@@ -3,7 +3,7 @@
 pkgname=kiro-bin
 _name="${pkgname%-bin}"
 pkgver=0.1.0
-pkgrel=4
+pkgrel=5
 pkgdesc="The AI IDE for prototype to production"
 arch=('x86_64')
 url='https://kiro.dev/'
