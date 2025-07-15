@@ -1,7 +1,7 @@
 pkgbase = kiro-bin
 	pkgdesc = The AI IDE for prototype to production
 	pkgver = 0.1.0
-	pkgrel = 3
+	pkgrel = 4
 	url = https://kiro.dev/
 	arch = x86_64
 	license = LicenseRef-AWS-IPL
