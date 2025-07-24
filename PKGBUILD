@@ -43,7 +43,7 @@ depends=(
 )
 provides=("$_name")
 conflicts=("$_name")
-options=(!strip)
+options=('!debug' '!strip')
 source=(
     "$_name-202507222255.tar.gz::https://prod.download.desktop.kiro.dev/releases/202507222255--distro-linux-x64-tar-gz/202507222255-distro-linux-x64.tar.gz"
     "$_name.desktop"

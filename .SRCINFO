@@ -33,6 +33,7 @@ pkgbase = kiro-bin
 	depends = pango
 	provides = kiro
 	conflicts = kiro
+	options = !debug
 	options = !strip
 	source = kiro-202507222255.tar.gz::https://prod.download.desktop.kiro.dev/releases/202507222255--distro-linux-x64-tar-gz/202507222255-distro-linux-x64.tar.gz
 	source = kiro.desktop
