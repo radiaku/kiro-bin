@@ -44,9 +44,9 @@ depends=(
 provides=("$_name")
 conflicts=("$_name")
 options=('!debug' '!strip')
-_tarball_date=202507290627
+_timestamp=202507290627
 source=(
-    "$_name-$_tarball_date.tar.gz::https://prod.download.desktop.kiro.dev/releases/$_tarball_date--distro-linux-x64-tar-gz/$_tarball_date-distro-linux-x64.tar.gz"
+    "$_name-$_timestamp.tar.gz::https://prod.download.desktop.kiro.dev/releases/$_timestamp--distro-linux-x64-tar-gz/$_timestamp-distro-linux-x64.tar.gz"
     "$_name.desktop"
     "$_name-url-handler.desktop"
     "$_name-workspace.xml"
