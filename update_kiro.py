@@ -103,7 +103,7 @@ def get_latest_version() -> str:
     print(f"Fetching latest version from {METADATA_URL}...")
     with urlopen(METADATA_URL) as response:
         data = json.loads(response.read())
-        return data["version"]
+        return data["currentRelease"]
 
 
 def main():
