@@ -3,13 +3,15 @@
 
 import argparse
 import hashlib
+import json
 import re
 import subprocess
 import tempfile
 from pathlib import Path
-from urllib.request import urlretrieve
+from urllib.request import urlopen, urlretrieve
 
 BASE_URL = "https://prod.download.desktop.kiro.dev/releases/stable/linux-x64/signed"
+METADATA_URL = "https://prod.download.desktop.kiro.dev/stable/metadata-linux-x64-stable.json"
 
 
 def b2sum(filepath: Path) -> str:
@@ -96,12 +98,23 @@ def update_srcinfo(version: str, sums: dict[str, str]) -> None:
     print("Updated .SRCINFO")
 
 
+def get_latest_version() -> str:
+    """Fetch the latest version from metadata."""
+    print(f"Fetching latest version from {METADATA_URL}...")
+    with urlopen(METADATA_URL) as response:
+        data = json.loads(response.read())
+        return data["version"]
+
+
 def main():
     parser = argparse.ArgumentParser(description="Update kiro-bin package to a new version")
-    parser.add_argument("version", help="New version (e.g., 0.7.21)")
+    parser.add_argument("version", nargs="?", help="Version to update to (e.g., 0.7.21). If omitted, fetches latest.")
     args = parser.parse_args()
 
     version = args.version
+    if not version:
+        version = get_latest_version()
+        print(f"Latest version: {version}")
     urls = get_urls(version)
 
     with tempfile.TemporaryDirectory() as tmpdir:
