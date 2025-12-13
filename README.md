@@ -2,6 +2,9 @@
 
 Arch Linux package for [Kiro](https://kiro.dev/) - The AI IDE for prototype to production.
 
+Based on:
+https://aur.archlinux.org/packages/kiro-ide
+
 ## Installation
 
 ```bash
