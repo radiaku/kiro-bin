@@ -13,7 +13,13 @@ makepkg -si
 
 ## Updating to a new version
 
-Use the helper script:
+Fully automated (cleans cache, updates, builds, and installs):
+
+```bash
+./build.sh
+```
+
+Or manually:
 
 ```bash
 # Automatically fetch and update to latest version
@@ -24,8 +30,6 @@ makepkg -si
 ./update_kiro.py 0.7.21
 makepkg -si
 ```
-
-The script downloads the release, calculates checksums, and updates PKGBUILD and .SRCINFO automatically.
 
 ## License
 
