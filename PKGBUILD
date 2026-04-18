@@ -51,7 +51,7 @@ options=('!debug' '!strip')
 _baseurl=https://prod.download.desktop.kiro.dev/releases/stable/linux-x64/signed/$pkgver/tar
 source=(
     "$_name-$pkgver.tar.gz::$_baseurl/kiro-ide-$pkgver-stable-linux-x64.tar.gz"
-    "$_name-certificate.pem::$_baseurl/certificate.pem"
+    "$_name-$pkgver-certificate.pem::$_baseurl/certificate.pem"
     "$_name-$pkgver-signature.bin::$_baseurl/signature.bin"
     "$_name.desktop"
     "$_name-url-handler.desktop"
@@ -68,7 +68,7 @@ b2sums=('93e620d0e08931d135c53dceea98c77f23b4aeae9053019912ea88d04d3827b2b450d46
 
 verify() {
     cd "$SRCDEST"
-    openssl x509 -pubkey -noout -in $_name-certificate.pem > kiro-pubkey.pem
+    openssl x509 -pubkey -noout -in $_name-$pkgver-certificate.pem > kiro-pubkey.pem
     openssl dgst -sha256 -verify kiro-pubkey.pem -signature $_name-$pkgver-signature.bin \
         $_name-$pkgver.tar.gz
 }

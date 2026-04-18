@@ -71,8 +71,8 @@ def update_srcinfo(version: str, sums: dict[str, str]) -> None:
         content,
     )
     content = re.sub(
-        r"source = kiro-certificate\.pem::.*?certificate\.pem",
-        f"source = kiro-certificate.pem::{BASE_URL}/{version}/tar/certificate.pem",
+        r"source = kiro-[\d.]+-certificate\.pem::.*?certificate\.pem",
+        f"source = kiro-{version}-certificate.pem::{BASE_URL}/{version}/tar/certificate.pem",
         content,
     )
     content = re.sub(
