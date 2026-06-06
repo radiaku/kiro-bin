@@ -8,7 +8,7 @@ import re
 import subprocess
 import tempfile
 from pathlib import Path
-from urllib.request import urlopen, urlretrieve
+from urllib.request import urlopen
 
 BASE_URL = "https://prod.download.desktop.kiro.dev/releases/stable/linux-x64/signed"
 METADATA_URL = "https://prod.download.desktop.kiro.dev/stable/metadata-linux-x64-stable.json"
@@ -24,9 +24,26 @@ def b2sum(filepath: Path) -> str:
 
 
 def download_file(url: str, dest: Path) -> None:
-    """Download a file from URL."""
+    """Download a file from URL with progress."""
     print(f"Downloading {url}...")
-    urlretrieve(url, dest)
+    with urlopen(url) as response:
+        total = response.headers.get("Content-Length")
+        total = int(total) if total else None
+        downloaded = 0
+        block_size = 8192
+        with open(dest, "wb") as f:
+            while True:
+                chunk = response.read(block_size)
+                if not chunk:
+                    break
+                f.write(chunk)
+                downloaded += len(chunk)
+                if total:
+                    pct = downloaded / total * 100
+                    print(f"\r  Progress: {pct:.1f}% ({downloaded}/{total} bytes)", end="")
+                else:
+                    print(f"\r  Downloaded: {downloaded} bytes", end="")
+    print()
 
 
 def get_urls(version: str) -> dict[str, str]:
